@@ -15,8 +15,17 @@ export class SignupComponent implements OnInit {
       Validators.maxLength(20),
       Validators.pattern(/^[a-z9-9]+$/)]),
       
-    password: new FormControl(''),
-    passwordConfiguration: new FormControl(''),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(20)
+    ]),
+    passwordConfirmation: new FormControl('',  [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(20)
+    ])
+    
   })
 
   constructor() { }
