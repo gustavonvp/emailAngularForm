@@ -31,6 +31,11 @@
 
     <!-- {{authForm.get('username').errors | json}} -->
 
+    <div *ngIf="authForm.get('password').touched && authForm.get('passwordConfirmation').touched && authForm.errors" class="ui red basic label">
+        <p *ngIf="authForm.errors.passwordsDontMatch">
+            Password and Password Confirmation must match
+        </p>
+    </div>
 
 <button class="ui submit button primary">
     Submit
