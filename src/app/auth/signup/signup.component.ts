@@ -12,7 +12,8 @@ export class SignupComponent implements OnInit {
 
   authForm = new FormGroup({
     
-    username: new FormControl('', [ Validators.required,
+    username: new FormControl('', [
+      Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^[a-z9-9]+$/)], [this.uniqueUsername.validate]),
