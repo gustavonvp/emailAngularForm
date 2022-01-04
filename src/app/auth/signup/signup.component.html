@@ -7,11 +7,7 @@
     
 </div> -->
 
-
-
-    <app-input label="Username" [control]="authForm.get('username')"></app-input>
-    {{authForm.get('username').errors | json}}
-
+<!-- 
 <div class="field">
     <label>Password</label> 
     <input formControlName="password" />
@@ -23,7 +19,17 @@
     <label>Password Confirmation</label>  
     <input formControlName="passwordConfirmation" />
     {{authForm.get('passwordConfirmation').errors | json}}
-</div>
+</div> -->
+
+
+
+    <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
+    
+    <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
+    
+    <app-input inputType="password" label="Password Confirmation" [control]="authForm.get('passwordConfirmation')"></app-input>
+
+    <!-- {{authForm.get('username').errors | json}} -->
 
 
 <button class="ui submit button primary">
