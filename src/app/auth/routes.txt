@@ -1,0 +1,3 @@
+https://api.angular-email.com/emails/{{id}} --> return all email 
+https://api.angular-email.com/emails --> return id from email
+https://api.angular-email.com/auth/signin --> login in api 
