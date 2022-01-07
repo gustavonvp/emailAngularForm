@@ -5,19 +5,18 @@ import {
   UrlSegment,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-  UrlTree
+  UrlTree,
+  Resolve
 } from '@angular/router';
-import { Observable, Subscriber } from 'rxjs';
-import { skipWhile, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { take, skipWhile } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
-  constructor(private authService: AuthService) {
-
-  }
+  constructor(private authService: AuthService) {}
 
   canLoad(
     route: Route,
@@ -26,7 +25,6 @@ export class AuthGuard implements CanLoad {
     return this.authService.signedin$.pipe(
       skipWhile(value => value === null),
       take(1)
-    )
-    
+    );
   }
 }
