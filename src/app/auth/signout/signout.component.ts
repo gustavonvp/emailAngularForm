@@ -8,18 +8,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signout.component.css']
 })
 export class SignoutComponent implements OnInit {
-
-  constructor(
-    private authService: AuthService,
-    private router: Router
-    ) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.authService.signout().subscribe(() => {
-      // Navigate the user back to a signin page 
       this.router.navigateByUrl('/');
-    
-    })
+    });
   }
-
 }
