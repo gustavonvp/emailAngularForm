@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailCreateComponent implements OnInit {
 
+  showModal = false;
+  
   constructor() { }
 
   ngOnInit() {
