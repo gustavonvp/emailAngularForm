@@ -9,13 +9,11 @@ import { EmailService } from '../email.service';
 export class EmailIndexComponent implements OnInit {
   emails = [];
 
-  constructor(private emailService: EmailService) { }
+  constructor(private emailService: EmailService) {}
 
   ngOnInit() {
-    this.emailService.getEmails()
-    .subscribe((emails) => {
+    this.emailService.getEmails().subscribe(emails => {
       this.emails = emails;
-    })
+    });
   }
-
 }
