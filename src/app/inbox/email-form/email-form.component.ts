@@ -23,4 +23,12 @@ export class EmailFormComponent implements OnInit {
       text: new FormControl(text, [Validators.required])
     });
   }
+
+  onSubmit() {
+    if (this.emailForm.invalid) {
+      return;
+    }
+
+    console.log(this.emailForm.value);
+  }
 }
